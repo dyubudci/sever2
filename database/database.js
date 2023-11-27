@@ -1,17 +1,22 @@
 require('dotenv').config();
+const e = require('express');
 const mysql = require('mysql');
 
 const con = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     port: process.env.DB_PORT,
+    password: 'thanh',
     database: process.env.DB_NAME
 });
 
-// con.connect(function (err) {
-//     if (err) throw err;
-//     console.log("Kết nối Database thành công!");
-// });
+con.connect(function (err) {
+    if (err) {
+        console.log(err)
+        return console.log("Kết nối db thất bại")
+    }
+    console.log("Kết nối Database thành công!");
+});
 
 
 const queryDatabase = (query, values) => {
@@ -21,7 +26,7 @@ const queryDatabase = (query, values) => {
                 reject(err);
                 console.log("Lỗi kết nối Database!");
                 return;
-            } 
+            }
             console.log("Kết nối Database thành công!");
             resolve(results);
         });

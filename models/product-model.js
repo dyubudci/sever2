@@ -16,9 +16,9 @@ const getAllProductsByStatus = async (trangThai) => {
 }
 
 const addProduct = async (newProduct) => {
-  const { tenSanPham, giaThue, trangThai, hienThi, loaiSanPham } = newProduct;
-  const query = `INSERT INTO sanpham (tenSanPham, giaThue, trangThai, hienThi, loaiSanPham) VALUES (?, ?, ?, ?, ?)`;
-  return db.queryDatabase(query, [tenSanPham, giaThue, trangThai, hienThi, loaiSanPham]);
+  const { tenSanPham, giaThue, trangThai, loaiSanPham } = newProduct;
+  const query = `INSERT INTO sanpham (tenSanPham, giaThue, trangThai,  loaiSanPham) VALUES (?, ?, ?, ?)`;
+  return db.queryDatabase(query, [tenSanPham, giaThue, trangThai, loaiSanPham]);
 }
 
 const updateProduct = async (idSanPham, updatedProductData) => {

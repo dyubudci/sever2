@@ -1,0 +1,43 @@
+POST http://192.168.1.12:3000/api/products/add
+Content-Type: application/json
+
+{
+     "tenSanPham":"ao1", 
+     "giaThue":10000,
+     "trangThai":"San Sang", 
+     "loaiSanPham":"sp1" 
+}
+
+
+###
+GET http://192.168.1.12:3000/api/products
+Content-Type: application/json
+
+{
+
+}
+
+###
+PUT http://192.168.1.12:3000/api/products/update/1
+Content-Type: application/json
+
+{
+ "tenSanPham":"ao2", 
+    "giaThue":10000,
+     "trangThai":"San Sang", 
+     "hienThi":"123",
+     "loaiSanPham":"sp1" 
+}
+
+###
+DELETE  http://192.168.1.12:3000/api/products/delete/1
+Content-Type: application/json
+
+###
+POST http://192.168.1.12:3000/api/account/Login
+Content-Type: application/json
+
+{
+    "idNhanVien":"1", 
+    "matKhau":"1"
+}

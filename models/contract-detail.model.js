@@ -26,7 +26,7 @@ const getContractDetailsByContractID = async (contractID) => {
   FROM hopdongchitiet hdct
   LEFT JOIN sanpham sp ON hdct.idSanPham = sp.idSanPham
   LEFT JOIN dichvu dv ON hdct.idDichVu = dv.idDichVu
-  WHERE idHopDong = ?;`;  
+  WHERE idHopDong = ?;`;
   return db.queryDatabase(query, [contractID]);
 }
 
