@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.0.1"
+  },
+  "name": "studio_wedding_server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tys7603/Studio_Wedding_Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tys7603/Studio_Wedding_Server/issues"
+  },
+  "homepage": "https://github.com/Tys7603/Studio_Wedding_Server#readme",
+  "description": ""
+}

@@ -1,0 +1,14 @@
+Quy tắc đặt tên
+Tên nhóm chức năng (Tiếng anh) + (router, controller, model) + .js
+
+
+GET() Lấy dữ liệu
+POST() Thêm dữ liệu
+PUST() Cập nhật dữ liệu
+DELETE() Xoá dữ liệu
+
+// Khi sử dụng database config .env theo máy nếu kh có pasword để trông
+
+File model thao tác về database
+File controller thao về với model
+File router thao về link api
