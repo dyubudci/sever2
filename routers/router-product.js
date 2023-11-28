@@ -17,4 +17,6 @@ router.put('/products/update/:idSanPham', product.updateProduct);
 router.delete('/products/delete/:idSanPham', product.deleteProductById);
 
 
+// Định tuyến cho viiec tim kiem san pham
+router.get('/products/search', product.getProductByName);
 module.exports = router;

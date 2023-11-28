@@ -67,11 +67,26 @@ const deleteProductById = async (req, res) => {
     res.status(500).send('Lỗi server');
   }
 };
-
+// Hàm lấy một sản phẩm theo tenSanPham
+const getProductByName = async (req, res) => {
+  const name = req.query.q;
+  try {
+    const product = await productModel.getAllProductsByName(name)
+    if (product.length > 0) {
+      res.json(product);
+    } else {
+      res.status(404).send('Không tìm thấy sản phẩm');
+    }
+  } catch (error) {
+    console.error('Lỗi khi lấy dữ liệu sản phẩm theo id:', error);
+    res.status(500).send('Lỗi server');
+  }
+};
 module.exports = {
   getAllProducts,
   getProductById,
   addProduct,
   updateProduct,
   deleteProductById,
+  getProductByName
 };

@@ -34,6 +34,10 @@ const deleteProductById = async (idSanPham) => {
   const query = `DELETE FROM sanpham WHERE idSanPham = ?`;
   return db.queryDatabase(query, [idSanPham]);
 }
+const getAllProductsByName = async (tenSanPham) => {
+  const query = `SELECT anhSanPham, idSanPham, tenSanPham, giaThue, trangThai, hienThi, loaiSanPham FROM sanpham WHERE tenSanPham like ? ORDER BY tenSanPham`;
+  return db.queryDatabase(query, [`%${tenSanPham}%`]);
+}
 
 module.exports = {
   getAllProducts,
@@ -41,5 +45,6 @@ module.exports = {
   getAllProductsByStatus,
   addProduct,
   updateProduct,
-  deleteProductById
+  deleteProductById,
+  getAllProductsByName
 };

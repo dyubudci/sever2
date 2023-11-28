@@ -2,7 +2,7 @@ POST http://192.168.1.12:3000/api/products/add
 Content-Type: application/json
 
 {
-     "tenSanPham":"ao1", 
+     "tenSanPham":"bo1", 
      "giaThue":10000,
      "trangThai":"San Sang", 
      "loaiSanPham":"sp1" 
@@ -13,9 +13,9 @@ Content-Type: application/json
 GET http://192.168.1.12:3000/api/products
 Content-Type: application/json
 
-{
-
-}
+###
+GET http://192.168.1.12:3000/api/products/search?q=bo
+Content-Type: application/json
 
 ###
 PUT http://192.168.1.12:3000/api/products/update/1
