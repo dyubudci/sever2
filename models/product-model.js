@@ -1,7 +1,7 @@
 const db = require('../database/database');
 
 const getAllProducts = async () => {
-  const query = `SELECT anhSanPham, tenSanPham, idSanPham, giaThue, trangThai, hienThi, loaiSanPham FROM sanpham`;
+  const query = `SELECT anhSanPham, tenSanPham, idSanPham, giaThue, trangThai, hienThi, loaiSanPham FROM sanpham WHERE hienthi = 1`;
   return db.queryDatabase(query, []);
 }
 
@@ -16,9 +16,10 @@ const getAllProductsByStatus = async (trangThai) => {
 }
 
 const addProduct = async (newProduct) => {
-  const { tenSanPham, giaThue, trangThai, loaiSanPham } = newProduct;
-  const query = `INSERT INTO sanpham (tenSanPham, giaThue, trangThai,  loaiSanPham) VALUES (?, ?, ?, ?)`;
-  return db.queryDatabase(query, [tenSanPham, giaThue, trangThai, loaiSanPham]);
+  const { tenSanPham, giaThue, trangThai, loaiSanPham, hienThi, anhSanPham } = newProduct;
+  console.log(trangThai)
+  const query = `INSERT INTO sanpham (tenSanPham, giaThue, trangThai,  loaiSanPham,hienThi,anhSanPham) VALUES (?, ?, ?, ?,?,?)`;
+  return db.queryDatabase(query, [tenSanPham, giaThue, trangThai, loaiSanPham, hienThi, anhSanPham]);
 }
 
 const updateProduct = async (idSanPham, updatedProductData) => {
@@ -31,7 +32,7 @@ const updateProduct = async (idSanPham, updatedProductData) => {
 }
 
 const deleteProductById = async (idSanPham) => {
-  const query = `DELETE FROM sanpham WHERE idSanPham = ?`;
+  const query = `UPDATE sanpham SET  hienThi = 0 WHERE idSanPham = ?`;
   return db.queryDatabase(query, [idSanPham]);
 }
 const getAllProductsByName = async (tenSanPham) => {

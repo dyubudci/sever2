@@ -31,10 +31,10 @@ const getProductById = async (req, res) => {
 
 // Hàm thêm sản phẩm
 const addProduct = async (req, res) => {
-  const { tenSanPham, giaThue, trangThai, hienThi, loaiSanPham } = req.body;
+  const { tenSanPham, giaThue, trangThai, hienThi, loaiSanPham, anhSanPham } = req.body;
 
   try {
-    const results = await productModel.addProduct({ tenSanPham, giaThue, trangThai, loaiSanPham });
+    const results = await productModel.addProduct({ tenSanPham, giaThue, trangThai, loaiSanPham, hienThi: 1, anhSanPham });
     res.json({ id: results.insertId, message: 'Sản phẩm đã được thêm thành công' });
   } catch (error) {
     console.error('Lỗi khi thêm sản phẩm:', error);

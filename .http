@@ -2,10 +2,11 @@ POST http://192.168.1.12:3000/api/products/add
 Content-Type: application/json
 
 {
-     "tenSanPham":"bo1", 
+     "tenSanPham":"kkkkkk", 
      "giaThue":10000,
-     "trangThai":"San Sang", 
-     "loaiSanPham":"sp1" 
+     "trangThai":"Chưa sẵn sàng", 
+     "loaiSanPham":"sp1" ,
+     "anhSanPham":""
 }
 
 
@@ -22,15 +23,15 @@ PUT http://192.168.1.12:3000/api/products/update/1
 Content-Type: application/json
 
 {
- "tenSanPham":"ao2", 
-    "giaThue":10000,
-     "trangThai":"San Sang", 
-     "hienThi":"123",
+     "tenSanPham":"ao2", 
+      "giaThue":10000,
+      "trangThai":"San Sang", 
+      "hienThi":"1",
      "loaiSanPham":"sp1" 
 }
 
 ###
-DELETE  http://192.168.1.12:3000/api/products/delete/1
+DELETE  http://192.168.1.12:3000/api/products/delete/27
 Content-Type: application/json
 
 ###
